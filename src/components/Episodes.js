@@ -22,8 +22,7 @@ export default function Episodes() {
           method: 'GET',
       })
       const tdata = await data.json();
-      console.log(tdata.seasons[0].poster_path);
-      setImage(tdata.seasons[s].poster_path);
+      setImage(tdata.seasons[s-1].poster_path);
       }
     
       useEffect(()=>{

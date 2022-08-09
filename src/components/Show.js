@@ -15,13 +15,11 @@ export default function Show() {
             method: 'GET',
         })
         const mdata = await res.json();
-        console.log(mdata);
         setShow(mdata);
       }
     
       useEffect(()=>{
         getShow();
-        console.log(show);
          // eslint-disable-next-line
       },[]);
 
