@@ -24,9 +24,9 @@
             <a href="#" class="mr-5 hover:text-white">Tv Shows</a>
             <a class="mr-5 hover:text-white">RequestContent</a> -->
           </nav>
-            <form onSubmit="getVal()">
+            <form id="myform">
             <input type="text" id="q" placeholder="Search..." style="color: black;">
-            <input type="submit" onClick="getVal()" id="subbtn" value="search"  class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
+            <input type="submit" id="subbtn" value="search"  class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
             </form>
         </div>
       </header>
@@ -75,12 +75,21 @@
     </div>
 </body>
 <script>
-function getVal(e) {
-  e.preventDefault();
-  const val = document.getElementById('q').value;
-  const link = document.createElement('a');
-  link.href = `/search/${val}`;
-  link.click();
-}
+    let form = document.getElementById('myform');
+    let btn = document.getElementById('subbtn');
+    form.addEventListener('submit',function(e){
+          e.preventDefault();
+          const val = document.getElementById('q').value;
+          const link = document.createElement('a');
+          link.href = `/search/${val}`;
+          link.click();
+    })
+    btn.addEventListener('click',function(e){
+          e.preventDefault();
+          const val = document.getElementById('q').value;
+          const link = document.createElement('a');
+          link.href = `/search/${val}`;
+          link.click();
+    })
 </script>
 </html>
